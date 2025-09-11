@@ -2,15 +2,37 @@
 
 Professional Chrome debugging configuration for VS Code with full profile support, extensions, and saved passwords.
 
+## ⚠️ **CRITICAL SECURITY WARNING**
+
+**This tool copies ALL personal data from your Chrome profile including:**
+- 🔑 **Saved passwords** (banking, personal accounts, etc.)
+- 🍪 **Cookies & sessions** (auto-login tokens)
+- 📧 **Personal browsing data**
+- 💳 **Autofill information** (credit cards, addresses)
+
+### 🚨 **DANGER: Development Mode Risks**
+- **Debug Chrome runs with disabled security features**
+- **Personal data is exposed in development environment**
+- **Risk of accidentally committing sensitive data to git**
+- **Potential data leakage during debugging sessions**
+
+### 🛡️ **Security Best Practices**
+1. **❌ NEVER copy passwords for work/client projects**
+2. **✅ Use password copying ONLY for personal projects**
+3. **🔒 Always answer "NO" to password copying in team environments**
+4. **🗑️ Regularly clean debug profiles containing sensitive data**
+5. **📝 Ensure debug profiles are in .gitignore (included by default)**
+6. **🔍 Review what data you're copying before proceeding**
+
 ## 🌟 Features
 
 - ✅ **Interactive Profile Selection** - Choose from all your Chrome profiles
 - ✅ **Custom Debug Profile Names** - Name your debug profiles as you want
-- ✅ **Optional Password Copying** - Choose whether to include saved passwords
+- ✅ **Optional Password Copying** - Choose whether to include saved passwords ⚠️
 - ✅ **Complete Extension Support** - All extensions with their data and settings
 - ✅ **Professional UI** - Colored output with progress indicators
 - ✅ **VS Code Integration** - Automatically updates launch.json
-- ✅ **Data Integrity** - Copies all Chrome data safely
+- ✅ **Security Awareness** - Clear warnings about data copying risks
 
 ## 📦 What Gets Copied
 
@@ -29,9 +51,9 @@ The script copies comprehensive Chrome data from your selected profile:
 
 1. **Download the script:**
    ```bash
-   wget https://raw.githubusercontent.com/ahmedghonim/chrome-debuger/main/setup-chrome-debug.sh
+   wget https://raw.githubusercontent.com/ahmedghonim/chrome-debugger/main/setup-chrome-debug.sh
    # or
-   curl -O https://raw.githubusercontent.com/ahmedghonim/chrome-debuger/main/setup-chrome-debug.sh
+   curl -O https://raw.githubusercontent.com/ahmedghonim/chrome-debugger/main/setup-chrome-debug.sh
    ```
 
 2. **Make it executable:**
@@ -47,13 +69,13 @@ The script copies comprehensive Chrome data from your selected profile:
 4. **Follow the interactive prompts:**
    - Enter your debug profile name
    - Select which Chrome profile to copy from
-   - Choose whether to copy passwords
+   - ⚠️ **Choose "NO" for passwords** (recommended for security)
    - Wait for the copying process to complete
 
 5. **Start debugging in VS Code:**
    - Press `F5` or go to Run and Debug
    - Select your newly created debug configuration
-   - Chrome will open with all your data!
+   - Chrome will open with extensions and safe data!
 
 ## 📋 Step-by-Step Usage
 
@@ -77,12 +99,14 @@ The script copies comprehensive Chrome data from your selected profile:
 ✅ Selected: Default Profile
 ```
 
-### Step 3: Password Settings
+### Step 3: Password Settings ⚠️
 ```
 🔐 Password Settings
-   Do you want to copy saved passwords to the debug profile? (y/N): y
-✅ Passwords will be copied
+   Do you want to copy saved passwords to the debug profile? (y/N): N
+⚠️  Passwords will NOT be copied (RECOMMENDED for security)
 ```
+
+**Security Recommendation:** Always select "N" for work projects to protect sensitive data.
 
 ### Step 4: Automated Copying
 The script will automatically:
@@ -161,9 +185,31 @@ Edit the generated configuration to match your server:
 
 ### Multiple Debug Profiles
 Run the script multiple times with different names to create multiple debug configurations:
-- `my-project-debug` - For main development
-- `testing-debug` - For testing with clean profile
-- `production-debug` - For production debugging
+- `my-project-debug` - For main development (no passwords)
+- `testing-debug` - For testing with clean profile (no passwords)
+- `personal-debug` - For personal projects (passwords optional)
+- `safe-debug` - Extensions only, no sensitive data
+
+## 🛡️ Security Guidelines
+
+### For Team/Work Projects ✅
+- **Always select "NO"** when asked about copying passwords
+- Use debug profiles for extensions and development convenience only
+- Regularly review and clean debug profiles
+- Never commit debug profile folders to version control
+
+### For Personal Projects ⚠️
+- Consider if you really need saved passwords in debug mode
+- Use separate debug profiles for sensitive vs non-sensitive projects
+- Be aware that debug Chrome has reduced security features
+- Clean up debug profiles after project completion
+
+### Data Protection Checklist
+- [ ] Debug profiles are in .gitignore
+- [ ] No passwords copied for work projects
+- [ ] Regular cleanup of old debug profiles
+- [ ] Team members aware of security implications
+- [ ] Review sensitive data before copying
 
 ## 🔧 Troubleshooting
 
