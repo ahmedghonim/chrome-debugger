@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Debug Chrome - My Project",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}/src",
+            "userDataDir": "${workspaceFolder}/.vscode/my-project-debug"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Debug Chrome - React App",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}/src",
+            "userDataDir": "${workspaceFolder}/.vscode/react-debug",
+            "runtimeArgs": [
+                "--disable-web-security",
+                "--disable-features=VizDisplayCompositor"
+            ]
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Debug Chrome - Next.js",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}",
+            "userDataDir": "${workspaceFolder}/.vscode/nextjs-debug"
+        }
+    ]
+}
