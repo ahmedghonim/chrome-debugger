@@ -26,17 +26,18 @@ Professional Chrome debugging configuration for VS Code with full profile suppor
 
 ## 🌟 Features
 
-- ✅ **Interactive Profile Selection** - Choose from all your Chrome profiles
+- ✅ **Multiple Chrome Profile Support** - Select from ANY of your Chrome profiles (Default, Profile 1, Profile 2, etc.)
+- ✅ **Interactive Profile Selection** - Script automatically detects and lists all available Chrome profiles
 - ✅ **Custom Debug Profile Names** - Name your debug profiles as you want
 - ✅ **Optional Password Copying** - Choose whether to include saved passwords ⚠️
-- ✅ **Complete Extension Support** - All extensions with their data and settings
+- ✅ **Complete Extension Support** - All extensions with their data and settings from selected profile
 - ✅ **Professional UI** - Colored output with progress indicators
 - ✅ **VS Code Integration** - Automatically updates launch.json
 - ✅ **Security Awareness** - Clear warnings about data copying risks
 
 ## 📦 What Gets Copied
 
-The script copies comprehensive Chrome data from your selected profile:
+The script copies comprehensive Chrome data from **your selected Chrome profile** (you choose which one):
 
 - **🧩 Extensions** - All installed extensions with their data
 - **⚙️ Preferences** - Extension settings and configurations
@@ -46,6 +47,23 @@ The script copies comprehensive Chrome data from your selected profile:
 - **💾 Local Storage** - Extension and website storage
 - **🗂️ IndexedDB** - Advanced extension storage
 - **🔒 Secure Preferences** - Encrypted settings
+
+## 👥 Chrome Profiles Explained
+
+**Your Chrome browser can have multiple profiles**, each with its own:
+- 🧩 **Different extensions** (work extensions vs personal extensions)
+- 🔑 **Separate saved passwords** (work accounts vs personal accounts)  
+- 📚 **Different bookmarks** (work bookmarks vs personal bookmarks)
+- 🍪 **Separate cookies/sessions** (logged into different accounts)
+- ⚙️ **Unique settings** (themes, preferences, etc.)
+
+**Common Chrome Profile Examples:**
+- **Default Profile** - Your main personal browsing
+- **Profile 1** - Work profile with work extensions
+- **Profile 2** - Testing profile with development extensions
+- **Profile 3** - Clean profile for specific projects
+
+**The script lets you choose which profile's data to copy**, so you can debug with the exact extensions and settings from any of your Chrome profiles!
 
 ## 🚀 Quick Start
 
@@ -68,7 +86,7 @@ The script copies comprehensive Chrome data from your selected profile:
 
 4. **Follow the interactive prompts:**
    - Enter your debug profile name
-   - Select which Chrome profile to copy from
+   - **Select from ANY of your Chrome profiles** (Default, Profile 1, Profile 2, etc.)
    - ⚠️ **Choose "NO" for passwords** (recommended for security)
    - Wait for the copying process to complete
 
@@ -92,12 +110,17 @@ The script copies comprehensive Chrome data from your selected profile:
 
 [1] Default Profile
 [2] Profile 1
-[3] Profile 6
-[4] Profile 7
+[3] Profile 3
+[4] Profile 5
+[5] Profile 6
+[6] Profile 7
+[7] Profile 9
 
-📝 Select source profile [1-4]: 1
+📝 Select source profile [1-7]: 1
 ✅ Selected: Default Profile
 ```
+
+**Note:** The script automatically detects ALL Chrome profiles on your system. You can select any profile - each may have different extensions, bookmarks, and saved data. Choose the profile that has the extensions and settings you want in your debug environment.
 
 ### Step 3: Password Settings ⚠️
 ```
